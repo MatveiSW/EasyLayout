@@ -30,11 +30,48 @@ public struct EasyLayout {
             ]
         )
     }
+    
+    public static func heightAnchor(view: UIView, constant: CGFloat) {
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.heightAnchor.constraint(equalToConstant: constant * coefHeight).isActive = true
+    }
+    
+    public static func heightAnchor(view: UIView, equalTo: UIView) {
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.heightAnchor.constraint(equalTo: equalTo.heightAnchor).isActive = true
+    }
+    
+    public static func widthAnchor(view: UIView, constant: CGFloat) {
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.widthAnchor.constraint(equalToConstant: constant * coefWidth).isActive = true
+    }
+    
+    public static func widthAnchor(view: UIView, equalTo: UIView) {
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.widthAnchor.constraint(equalTo: equalTo.widthAnchor).isActive = true
+    }
+    
+    public static func topAnchor(view: UIView, toAnchor anchor: NSLayoutYAxisAnchor, constant: CGFloat) {
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.topAnchor.constraint(equalTo: anchor, constant: constant * coefHeight).isActive = true
+    }
+    
+    public static func leadingAnchor(view: UIView, toAnchor anchor: NSLayoutXAxisAnchor, constant: CGFloat) {
+            view.translatesAutoresizingMaskIntoConstraints = false
+            view.leadingAnchor.constraint(equalTo: anchor, constant: constant * coefWidth).isActive = true
+    }
+
+    public static func trailingAnchor(view: UIView, toAnchor anchor: NSLayoutXAxisAnchor, constant: CGFloat) {
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.trailingAnchor.constraint(equalTo: anchor, constant: -constant * coefWidth).isActive = true
+    }
+
+    public static func bottomAnchor(view: UIView, toAnchor anchor: NSLayoutYAxisAnchor, constant: CGFloat) {
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.bottomAnchor.constraint(equalTo: anchor, constant: -constant * coefHeight).isActive = true
+    }
+
+
 }
 
-extension UIView {
-    func edgeInsets(to superview: UIView, top: CGFloat = 0, leading: CGFloat = 0, trailing: CGFloat = 0, bottom: CGFloat = 0) {
-        EasyLayout.edgeInsets(view: self, to: superview, top: top, leading: leading, trailing: trailing, bottom: bottom)
-    }
-}
 
