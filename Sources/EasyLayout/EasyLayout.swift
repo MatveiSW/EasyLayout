@@ -25,6 +25,7 @@ public struct EasyLayout {
         
         if let top = top {
             constraints.append(view.topAnchor.constraint(equalTo: superview.topAnchor, constant: top * coefHeight))
+            print()
         }
         if let leading = leading {
             constraints.append(view.leadingAnchor.constraint(equalTo: superview.leadingAnchor, constant: leading * coefWidth))
