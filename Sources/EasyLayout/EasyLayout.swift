@@ -25,7 +25,6 @@ public struct EasyLayout {
         
         if let top = top {
             constraints.append(view.topAnchor.constraint(equalTo: superview.topAnchor, constant: top * coefHeight))
-            print()
         }
         if let leading = leading {
             constraints.append(view.leadingAnchor.constraint(equalTo: superview.leadingAnchor, constant: leading * coefWidth))
@@ -41,8 +40,3 @@ public struct EasyLayout {
     }
 }
 
-extension UIView {
-    func edgeInsets(to superview: UIView, top: CGFloat? = nil, leading: CGFloat? = nil, trailing: CGFloat? = nil, bottom: CGFloat? = nil) {
-        EasyLayout.edgeInsets(view: self, to: superview, top: top, leading: leading, trailing: trailing, bottom: bottom)
-    }
-}
